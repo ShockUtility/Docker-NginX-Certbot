@@ -1,0 +1,44 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    // 파일 리스트에서 감추기
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "nodejs": true,
+      // "nodejs/node_modules/[^_]*": true,
+      ".gitignore": true,
+      "package-lock.json": true,
+      ".funcignore": true
+    },
+
+    // 검색에서 제외시킬 폴더
+    "search.exclude": {
+      "**/e2e": true,
+      "**/dist": true,
+      "**/bower_components": true,
+      "**/node_modules": true,
+      "nodejs": true
+    },
+
+    // 에디터 셋팅
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.trimAutoWhitespace": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "[javascript]": {
+      "editor.formatOnSave": false
+    },
+    "[json]": {
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.formatOnSave": false
+    }
+  }
+}
