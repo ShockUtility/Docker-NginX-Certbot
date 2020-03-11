@@ -1,0 +1,4 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+0 */12 * * * root certbot renew --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
