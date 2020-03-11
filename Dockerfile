@@ -17,11 +17,15 @@ RUN apt-get install -qy python-certbot-nginx
 #* 디버깅을 위한 패키지 설치
 #******************************************************
 # RUN apt-get install -qy procps
-# RUN apt-get install -qy rsyslog
+RUN apt-get install -qy rsyslog
 
 #******************************************************
 #* certbot 스케줄 등록
 #******************************************************
+ADD certbot /etc/cron.d/certbot
+RUN chown nginx:nginx /etc/cron.d/certbot
+RUN mkdir /var/log/letsencrypt
+RUN chown nginx:nginx /var/log/letsencrypt
 RUN crontab /etc/cron.d/certbot
 
 #******************************************************
@@ -36,4 +40,5 @@ RUN chown nginx:nginx /etc/init.d/fcgiwrap
 ADD initService.sh /usr/bin/initService.sh
 RUN chmod +x /usr/bin/initService.sh
 ENTRYPOINT ["/usr/bin/initService.sh"]
+
 
