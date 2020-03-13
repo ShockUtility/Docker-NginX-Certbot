@@ -22,12 +22,12 @@ RUN apt-get install -qy python-certbot-nginx
 #******************************************************
 #* certbot 사용할 폴더 생성 및 권한설정
 #******************************************************
-# RUN adduser nginx root
+RUN adduser nginx root
 RUN mkdir /var/log/letsencrypt
 RUN mkdir /var/lib/letsencrypt
-RUN chmod 777 /var/log/letsencrypt
-RUN chmod 777 /var/lib/letsencrypt
-RUN chmod 777 /etc/letsencrypt
+RUN chmod 770 /var/log/letsencrypt
+RUN chmod 770 /var/lib/letsencrypt
+RUN chmod 770 /etc/letsencrypt
 
 #******************************************************
 #* certbot 스케줄 등록
